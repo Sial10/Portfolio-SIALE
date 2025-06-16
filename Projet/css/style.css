@@ -1,0 +1,547 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: white;
+  color: black;
+}
+
+header {
+  background-color: #000;
+  padding: 10px 0;
+  text-align: center;
+}
+.hero {
+  background-color: white; 
+  color: black;
+  padding: 60px 20px;
+}
+
+
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-text {
+  max-width: 600px;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+@media (min-width: 768px) {
+  .hero-container {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .hero-text {
+    flex: 1;
+    margin-right: 40px;
+  }
+
+  .hero-image {
+    flex: 1;
+  }
+}
+
+/* Boutons Voir Plus / Voir Moins */
+.voir-plus {
+  display: inline-block;
+  padding: 6px 12px;
+  background-color: #009688; 
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.voir-plus:hover {
+  background-color: #00796B; 
+}
+
+/* Navigation */
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #009688; /* Vert Persian */
+}
+
+/* Sections générales */
+section h2 {
+  text-align: center;
+}
+
+section, main {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: 0 auto 40px auto;
+  box-sizing: border-box;
+}
+
+/* Formulaires */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input, textarea {
+  margin-bottom: 15px;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #000;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #009688;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #000; /* fond noir */
+  color: #fff;           /* texte blanc */
+  padding: 10px 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+ width: 80px;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+  .logo img {
+    width: 60px;
+  }
+  .logo .logo-text {
+    margin-top: 5px;
+  }
+}
+.persian {
+  color: #009688; 
+}
+
+/* Navigation spécifique */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #009688; 
+}
+
+/* Section À propos */
+#apropos {
+  background-color: #fff;
+  padding: 40px 20px;
+  color: #000;
+  font-family: Arial, sans-serif;
+}
+
+#apropos h2.persian {
+  color: #009688; 
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Stabiliser layout : colonne texte + image fixe avec grid */
+.apropos-content {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 40px;
+  align-items: start;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Image avec bord arrondi plus marqué et contour vert persian */
+.apropos-content img {
+  width: 300px;         
+  height: auto;
+  border-radius: 30px;   
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border: 4px solid #009688;
+  transition: border-color 0.3s ease;
+}
+
+
+.apropos-content .description {
+  flex: 1 1 500px;
+  text-align: justify;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+.apropos-content .description {
+  min-height: 320px; 
+  position: relative;
+}
+
+.apropos-content .description a.btn,
+.apropos-content .description button.btn {
+  display: inline-block;
+  margin-top: 20px;
+  margin-right: 10px;
+  padding: 10px 18px;
+  background-color: #009688;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.apropos-content .description a.btn:hover,
+.apropos-content .description button.btn:hover {
+  background-color: #00675b;
+}
+
+.projet {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  background-color: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  flex-wrap: wrap; /* pour responsive */
+}
+
+.projet-description {
+  flex: 1 1 60%;
+  min-width: 280px;
+  text-align: justify;
+}
+
+.projet-image {
+  width: 250px;
+  height: auto;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+/* Sections À propos et Compétences uniformes */
+#apropos, #competences {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 900px;
+  box-sizing: border-box;
+}
+
+/* Section compétences */
+#competences {
+  padding: 30px 20px;
+}
+
+.competences-container {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap; 
+}
+
+.competences-box {
+  background-color: white;
+  border: 2px solid #009688; /* vert persian */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 20px 30px;
+  flex: 1 1 45%;
+  min-width: 300px;
+  box-sizing: border-box;
+}
+
+.competences-box h3 {
+  text-align: center;
+  color: #009688; /* vert persian */
+  margin-bottom: 20px;
+  font-size: 1.6rem;
+}
+
+.competence {
+  margin-bottom: 15px;
+}
+
+.competence p {
+  margin: 0 0 5px 0;
+  font-weight: 600;
+  color: #333;
+}
+
+.bar {
+  background-color: #ddd;
+  border-radius: 10px;
+  height: 15px;
+  overflow: hidden;
+}
+
+.niveau {
+  height: 100%;
+  background-color: #009688; /* vert persian */
+  border-radius: 10px 0 0 10px;
+}
+.contact-separator {
+  border: none;
+  height: 2px;
+  background-color: #009688; /* vert persian */
+  margin: 20px 0;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 2px;
+}
+/* Section Contact */
+.contact-section {
+  background-color: #000;
+  color: #fff;
+  padding: 50px 40px;
+  max-width: 900px;
+  margin: 0 auto 60px auto;
+  border-radius: 12px;
+  box-sizing: border-box;
+  box-shadow: 0 0 15px rgba(42, 157, 143, 0.5);
+}
+
+.contact-text {
+  font-size: 1.3rem;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.contact-text .persian {
+  color: #009688; 
+  font-weight: 600;
+}
+
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.contact-info {
+  background-color: white;
+  padding: 15px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  color: black;
+  font-size: 1rem;
+}
+
+.contact-info p {
+  display: flex;
+  align-items: center;
+  gap: 10px; 
+  margin: 10px 0;
+}
+
+.contact-info i {
+  font-size: 1.2rem;
+  color: #009688; 
+}
+
+.contact-info .icon {
+  width: 24px;
+  height: 24px;
+}
+  
+.contact-info a {
+  color: #009688; 
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 45%;
+  min-width: 150px;
+}
+
+label {
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+input[type="text"], input[type="email"],
+textarea {
+  padding: 8px 12px;
+  border: 2px solid #009688;
+  border-radius: 6px;
+  background-color: #fff;
+  color: #000;
+  font-size: 1rem;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+  border-color: #70d7c7;
+  outline: none;
+}
+
+button.btn-persian {
+  width: 130px;
+  padding: 10px 0;
+  font-size: 1rem;
+  background-color: #009688;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  align-self: center;
+  transition: background-color 0.3s ease;
+}
+
+button.btn-persian:hover {
+  background-color: #00796B;
+}
+hr {
+  border: none;
+  height: 2px;
+  background-color: #009688; 
+  margin: 20px 0;
+}
+footer {
+  background-color: white;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 40px;
+  font-size: 14px;
+  box-sizing: border-box;
+  border-top: 1px solid #ccc; 
+  font-family: Arial, sans-serif;
+}
+
+footer .persian {
+  color: #009688; 
+  font-weight: bold;
+}
+
+.footer-left, .footer-right {
+  display: flex;
+  align-items: center;
+}
+body, 
+p, 
+h1, h2, h3, h4, h5, h6, 
+section, 
+div, 
+li, 
+label {
+  text-align: justify;
+}
+button, 
+button.btn-persian, 
+.voir-plus {
+  background-color: #009688; 
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px; 
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  display: inline-block;
+  width: auto; 
+  min-width: 80px; 
+}
+
+button:hover, 
+button.btn-persian:hover, 
+.voir-plus:hover {
+  background-color: #00796B; 
+}
+
+.texte-cache {
+  display: none;  
+}
+
+.texte-cache.active {
+  display: inline; 
+}
+.texte-cache {
+  transition: max-height 0.4s ease;
+  overflow: hidden;
+}
