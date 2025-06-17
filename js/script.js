@@ -85,3 +85,17 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+const images = [
+    "img/service.png",
+    "img/codage.jpg",
+    "img/info.avif"
+  ];
+
+  let currentIndex = 0;
+  const heroImg = document.getElementById("heroImg");
+  const intervalTime = 3000;
+
+  setInterval(() => {
+    currentIndex = (currentIndex + 1) % images.length;  
+    heroImg.src = images[currentIndex];
+  }, intervalTime);
