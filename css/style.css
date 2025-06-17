@@ -1,64 +1,31 @@
-/* Reset et base */
 body {
   margin: 0;
-  padding-top: 60px; /* pour laisser de la place à l'en-tête fixe */
   font-family: Arial, sans-serif;
   background-color: white;
   color: black;
   word-spacing: normal;
   white-space: normal;
   overflow-wrap: break-word;
-  box-sizing: border-box;
-  text-align: justify; /* ajouté pour la plupart des textes */
+  padding-top: 60px;
 }
 
-/* En-tête fixe */
 header {
+  background-color: #000;
+  padding: 10px 0;
+  text-align: center;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 60px; /* hauteur fixe, en accord avec le padding-top du body */
-  background-color: #000;
-  padding: 10px 0;
-  text-align: center;
-  z-index: 1000; /* pour être au-dessus */
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  z-index: 1000; /* pour qu’il soit au-dessus des autres éléments */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* optionnel, pour un effet d’ombre */
 }
-
-/* Navigation dans header */
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 30px;
-  justify-content: center;
-  align-items: center;
-}
-
-nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-  color: #009688; /* vert persian */
-}
-
-/* Hero section */
 .hero {
-  background-color: white;
+  background-color: white; 
   color: black;
   padding: 60px 20px;
-  max-width: 900px;
-  margin: 0 auto 40px;
 }
+
 
 .hero-container {
   display: flex;
@@ -73,18 +40,18 @@ nav ul li a:hover {
 }
 
 .hero-image {
-  width: 400px;
-  height: 300px;
-  overflow: hidden;
+  width: 400px;       /* largeur fixe, adapte selon ton design */
+  height: 300px;      /* hauteur fixe */
+  overflow: hidden;   /* coupe ce qui dépasse */
   flex: 1;
 }
 
 .hero-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  display: block;
-  border-radius: 10px;
+  object-fit: cover;  /* adapte l’image pour remplir tout le conteneur sans déformation */
+  display: block;     /* supprime l’espace blanc sous l’image */
+   border-radius: 10px;
   margin-top: 20px;
 }
 
@@ -100,43 +67,55 @@ nav ul li a:hover {
   }
 }
 
-/* Boutons généraux */
-button, 
-button.btn-persian, 
+/* Boutons Voir Plus / Voir Moins */
 .voir-plus {
+  display: inline-block;
+  padding: 6px 12px;
   background-color: #009688; 
   color: white;
-  border: none;
+  text-decoration: none;
+  font-size: 14px;
   border-radius: 5px;
-  padding: 8px 16px; 
-  cursor: pointer;
-  font-weight: bold;
   transition: background-color 0.3s ease;
-  text-align: center;
-  display: inline-block;
-  min-width: 80px; 
+  margin-top: 10px;
+  cursor: pointer;
 }
 
-button:hover, 
-button.btn-persian:hover, 
 .voir-plus:hover {
   background-color: #00796B; 
 }
 
-.voir-plus {
-  margin-top: 10px;
+/* Navigation */
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #009688; /* Vert Persian */
 }
 
 /* Sections générales */
+section h2 {
+  text-align: center;
+}
+
 section, main {
   padding: 40px 20px;
   max-width: 900px;
-  margin: 0 auto 40px;
+  margin: 0 auto 40px auto;
   box-sizing: border-box;
-}
-
-section h2 {
-  text-align: center;
 }
 
 /* Formulaires */
@@ -154,34 +133,27 @@ input, textarea {
   box-sizing: border-box;
 }
 
-input[type="text"], input[type="email"], textarea {
-  border: 2px solid #009688;
-  background-color: #fff;
-  color: #000;
-  resize: vertical;
-  transition: border-color 0.3s ease;
+button {
+  background-color: #000;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
 }
 
-input[type="text"]:focus, textarea:focus {
-  border-color: #70d7c7;
-  outline: none;
+button:hover {
+  background-color: #009688;
 }
 
-button.btn-persian {
-  width: 130px;
-  padding: 10px 0;
-  font-size: 1rem;
-  border-radius: 8px;
-  align-self: center;
-}
-
-/* Navbar custom */
+/* Navbar */
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #000;
-  color: #fff;
+  background-color: #000; /* fond noir */
+  color: #fff;           /* texte blanc */
   padding: 10px 20px;
 }
 
@@ -191,12 +163,11 @@ button.btn-persian {
 }
 
 .logo-img {
-  width: 80px;
+ width: 80px;
   height: auto;
   max-width: 100%;
   object-fit: contain;
 }
-
 @media (max-width: 600px) {
   .navbar {
     flex-direction: column;
@@ -209,31 +180,43 @@ button.btn-persian {
     margin-top: 5px;
   }
 }
-
-/* Classes couleurs */
 .persian {
-  color: #009688;
+  color: #009688; 
+}
+
+/* Navigation spécifique */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #009688; 
 }
 
 /* Section À propos */
 #apropos {
-  background-color: #f0f0f0;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 20px 20px 40px;
+  background-color: #fff;
+  padding: 40px 20px;
   color: #000;
   font-family: Arial, sans-serif;
-  max-width: 900px;
-  margin: 20px auto;
-  box-sizing: border-box;
 }
 
 #apropos h2.persian {
-  color: #009688;
+  color: #009688; 
   text-align: center;
   margin-bottom: 30px;
 }
 
+/* Stabiliser layout : colonne texte + image fixe avec grid */
 .apropos-content {
   display: grid;
   grid-template-columns: 1fr 300px;
@@ -243,22 +226,26 @@ button.btn-persian {
   margin: 0 auto;
 }
 
+/* Image avec bord arrondi plus marqué et contour vert persian */
 .apropos-content img {
-  width: 300px;
+  width: 300px;         
   height: auto;
-  border-radius: 30px;
+  border-radius: 30px;   
   object-fit: cover;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   border: 4px solid #009688;
   transition: border-color 0.3s ease;
 }
 
+
 .apropos-content .description {
   flex: 1 1 500px;
   text-align: justify;
   font-size: 1.1rem;
   line-height: 1.6;
-  min-height: 320px;
+}
+.apropos-content .description {
+  min-height: 320px; 
   position: relative;
 }
 
@@ -282,7 +269,6 @@ button.btn-persian {
   background-color: #00675b;
 }
 
-/* Projets */
 .projet {
   display: flex;
   align-items: flex-start;
@@ -291,7 +277,7 @@ button.btn-persian {
   padding: 1.5rem;
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* pour responsive */
 }
 
 .projet-description {
@@ -308,14 +294,19 @@ button.btn-persian {
 }
 
 /* Sections À propos et Compétences uniformes */
-#competences {
+#apropos, #competences {
   background-color: #f0f0f0;
   border: 1px solid #ccc;
   border-radius: 8px;
-  padding: 30px 20px;
+  padding: 20px;
   margin: 20px auto;
   max-width: 900px;
   box-sizing: border-box;
+}
+
+/* Section compétences */
+#competences {
+  padding: 30px 20px;
 }
 
 .competences-container {
@@ -324,12 +315,12 @@ button.btn-persian {
   display: flex;
   gap: 20px;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: wrap; 
 }
 
 .competences-box {
   background-color: white;
-  border: 2px solid #009688;
+  border: 2px solid #009688; /* vert persian */
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   padding: 20px 30px;
@@ -340,7 +331,7 @@ button.btn-persian {
 
 .competences-box h3 {
   text-align: center;
-  color: #009688;
+  color: #009688; /* vert persian */
   margin-bottom: 20px;
   font-size: 1.6rem;
 }
@@ -364,40 +355,39 @@ button.btn-persian {
 
 .niveau {
   height: 100%;
-  background-color: #009688;
+  background-color: #009688; /* vert persian */
   border-radius: 10px 0 0 10px;
 }
-
-/* Separator */
 .contact-separator {
   border: none;
   height: 2px;
-  background-color: #009688;
-  margin: 20px auto;
+  background-color: #009688; /* vert persian */
+  margin: 20px 0;
   max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
   border-radius: 2px;
 }
-
 /* Section Contact */
 .contact-section {
   background-color: #000;
   color: #fff;
   padding: 50px 40px;
   max-width: 900px;
-  margin: 0 auto 60px;
+  margin: 0 auto 60px auto;
   border-radius: 12px;
   box-sizing: border-box;
   box-shadow: 0 0 15px rgba(42, 157, 143, 0.5);
-  text-align: center;
 }
 
 .contact-text {
   font-size: 1.3rem;
+  text-align: center;
   margin-bottom: 25px;
 }
 
 .contact-text .persian {
-  color: #009688;
+  color: #009688; 
   font-weight: 600;
 }
 
@@ -406,7 +396,6 @@ button.btn-persian {
   flex-direction: column;
   gap: 15px;
 }
-
 .contact-info {
   background-color: white;
   padding: 15px 20px;
@@ -421,30 +410,33 @@ button.btn-persian {
 .contact-info p {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 10px; 
   margin: 10px 0;
 }
 
 .contact-info i {
   font-size: 1.2rem;
-  color: #009688;
+  color: #009688; 
 }
 
+.contact-info .icon {
+  width: 24px;
+  height: 24px;
+}
+  
 .contact-info a {
-  color: #009688;
+  color: #009688; 
   text-decoration: none;
 }
 
 .contact-info a:hover {
   text-decoration: underline;
 }
-
 .icon {
   width: 20px;
   height: 20px;
 }
 
-/* Form row */
 .form-row {
   display: flex;
   gap: 20px;
@@ -459,7 +451,51 @@ button.btn-persian {
   min-width: 150px;
 }
 
-/* Footer */
+label {
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+input[type="text"], input[type="email"],
+textarea {
+  padding: 8px 12px;
+  border: 2px solid #009688;
+  border-radius: 6px;
+  background-color: #fff;
+  color: #000;
+  font-size: 1rem;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+  border-color: #70d7c7;
+  outline: none;
+}
+
+button.btn-persian {
+  width: 130px;
+  padding: 10px 0;
+  font-size: 1rem;
+  background-color: #009688;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  align-self: center;
+  transition: background-color 0.3s ease;
+}
+
+button.btn-persian:hover {
+  background-color: #00796B;
+}
+hr {
+  border: none;
+  height: 2px;
+  background-color: #009688; 
+  margin: 20px 0;
+}
 footer {
   background-color: white;
   color: black;
@@ -468,34 +504,59 @@ footer {
   padding: 15px 40px;
   font-size: 14px;
   box-sizing: border-box;
-  border-top: 1px solid #ccc;
-  margin-top: 20px;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
+  border-top: 1px solid #ccc; 
+  font-family: Arial, sans-serif;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  header {
-    height: auto;
-    padding: 15px 0;
-    flex-direction: column;
-  }
+footer .persian {
+  color: #009688; 
+  font-weight: bold;
+}
 
-  .hero-container {
-    flex-direction: column;
-  }
+.footer-left, .footer-right {
+  display: flex;
+  align-items: center;
+}
+body, 
+p, 
+h1, h2, h3, h4, h5, h6, 
+section, 
+div, 
+li, 
+label {
+  text-align: justify;
+}
+button, 
+button.btn-persian, 
+.voir-plus {
+  background-color: #009688; 
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px; 
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  display: inline-block;
+  width: auto; 
+  min-width: 80px; 
+}
 
-  .apropos-content {
-    grid-template-columns: 1fr;
-  }
+button:hover, 
+button.btn-persian:hover, 
+.voir-plus:hover {
+  background-color: #00796B; 
+}
 
-  .competences-container {
-    flex-direction: column;
-  }
+.texte-cache {
+  display: none;  
+}
 
-  .form-row {
-    flex-direction: column;
-  }
+.texte-cache.active {
+  display: inline; 
+}
+.texte-cache {
+  transition: max-height 0.4s ease;
+  overflow: hidden;
 }
