@@ -477,3 +477,6 @@ footer .persian {
 .texte-cache.active {
   display: inline;
 }
+.bangui-text p {
+  text-align: justify;
+}
