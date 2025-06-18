@@ -7,6 +7,7 @@ body {
   white-space: normal;
   overflow-wrap: break-word;
   padding-top: 60px;
+  text-align: justify;
 }
 
 header {
@@ -17,9 +18,10 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000; /* pour qu’il soit au-dessus des autres éléments */
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* optionnel, pour un effet d’ombre */
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
+
 .bangui {
   background-color: white; 
   color: black;
@@ -39,18 +41,18 @@ header {
 }
 
 .bangui-image {
-  width: 400px;       /* largeur fixe, adapte selon ton design */
-  height: 300px;      /* hauteur fixe */
-  overflow: hidden;   /* coupe ce qui dépasse */
+  width: 400px;
+  height: 300px;
+  overflow: hidden;
   flex: 1;
 }
 
 .bangui-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;  /* adapte l’image pour remplir tout le conteneur sans déformation */
-  display: block;     /* supprime l’espace blanc sous l’image */
-   border-radius: 10px;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
   margin-top: 20px;
 }
 
@@ -66,7 +68,6 @@ header {
   }
 }
 
-/* Boutons Voir Plus / Voir Moins */
 .voir-plus {
   display: inline-block;
   padding: 6px 12px;
@@ -84,28 +85,28 @@ header {
   background-color: #00796B; 
 }
 
-/* Navigation */
 nav ul {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 20px;
 }
 
-nav a {
+nav a,
+nav ul li a {
   color: white;
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s ease;
 }
 
-nav a:hover {
-  color: #009688; /* Vert Persian */
+nav a:hover,
+nav ul li a:hover {
+  color: #009688;
 }
 
-/* Sections générales */
 section h2 {
   text-align: center;
 }
@@ -117,7 +118,6 @@ section, main {
   box-sizing: border-box;
 }
 
-/* Formulaires */
 form {
   display: flex;
   flex-direction: column;
@@ -132,13 +132,12 @@ input, textarea {
   box-sizing: border-box;
 }
 
-/* Navbar */
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #000; /* fond noir */
-  color: #fff;           /* texte blanc */
+  background-color: #000;
+  color: #fff;
   padding: 10px 20px;
 }
 
@@ -148,11 +147,12 @@ input, textarea {
 }
 
 .logo-img {
- width: 80px;
+  width: 80px;
   height: auto;
   max-width: 100%;
   object-fit: contain;
 }
+
 @media (max-width: 600px) {
   .navbar {
     flex-direction: column;
@@ -165,43 +165,27 @@ input, textarea {
     margin-top: 5px;
   }
 }
+
 .persian {
-  color: #009688; 
+  color: #009688;
 }
 
-/* Navigation spécifique */
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-
-nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s;
-}
-
-nav ul li a:hover {
-  color: #009688; 
-}
-
-/* Section À propos */
 #apropos {
-  background-color: #fff;
+  background-color: #f0f0f0;
   padding: 40px 20px;
   color: #000;
-  font-family: Arial, sans-serif;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin: 20px auto;
+  max-width: 900px;
+  box-sizing: border-box;
 }
 
 #apropos h2.persian {
-  color: #009688; 
   text-align: center;
   margin-bottom: 30px;
 }
 
-/* Stabiliser layout : colonne texte + image fixe avec grid */
 .apropos-content {
   display: grid;
   grid-template-columns: 1fr 300px;
@@ -211,26 +195,21 @@ nav ul li a:hover {
   margin: 0 auto;
 }
 
-/* Image avec bord arrondi plus marqué et contour vert persian */
 .apropos-content img {
-  width: 300px;         
-  height: auto;
-  border-radius: 30px;   
+  width: 300px;
+  border-radius: 30px;
   object-fit: cover;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   border: 4px solid #009688;
   transition: border-color 0.3s ease;
 }
 
-
 .apropos-content .description {
   flex: 1 1 500px;
   text-align: justify;
   font-size: 1.1rem;
   line-height: 1.6;
-}
-.apropos-content .description {
-  min-height: 320px; 
+  min-height: 320px;
   position: relative;
 }
 
@@ -257,7 +236,7 @@ nav ul li a:hover {
   padding: 1.5rem;
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  flex-wrap: wrap; /* pour responsive */
+  flex-wrap: wrap;
 }
 
 .projet-description {
@@ -268,13 +247,11 @@ nav ul li a:hover {
 
 .projet-image {
   width: 250px;
-  height: auto;
   border-radius: 8px;
   flex-shrink: 0;
 }
 
-/* Sections À propos et Compétences uniformes */
-#apropos, #competences {
+#competences {
   background-color: #f0f0f0;
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -290,12 +267,12 @@ nav ul li a:hover {
   display: flex;
   gap: 20px;
   justify-content: center;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
 }
 
 .competences-box {
   background-color: white;
-  border: 2px solid #009688; /* vert persian */
+  border: 2px solid #009688;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   padding: 20px 30px;
@@ -306,7 +283,7 @@ nav ul li a:hover {
 
 .competences-box h3 {
   text-align: center;
-  color: #009688; /* vert persian */
+  color: #009688;
   margin-bottom: 20px;
   font-size: 1.6rem;
 }
@@ -330,20 +307,20 @@ nav ul li a:hover {
 
 .niveau {
   height: 100%;
-  background-color: #009688; /* vert persian */
+  background-color: #009688;
   border-radius: 10px 0 0 10px;
 }
-.contact-separator {
+
+.contact-separator,
+hr.section-divider {
   border: none;
   height: 2px;
-  background-color: #009688; /* vert persian */
-  margin: 20px 0;
+  background-color: #009688;
+  margin: 20px auto;
   max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
   border-radius: 2px;
 }
-/* Section Contact */
+
 .contact-section {
   background-color: #000;
   color: #fff;
@@ -362,7 +339,7 @@ nav ul li a:hover {
 }
 
 .contact-text .persian {
-  color: #009688; 
+  color: #009688;
   font-weight: 600;
 }
 
@@ -371,6 +348,7 @@ nav ul li a:hover {
   flex-direction: column;
   gap: 15px;
 }
+
 .contact-info {
   background-color: white;
   padding: 15px 20px;
@@ -385,31 +363,28 @@ nav ul li a:hover {
 .contact-info p {
   display: flex;
   align-items: center;
-  gap: 10px; 
+  gap: 10px;
   margin: 10px 0;
 }
 
 .contact-info i {
   font-size: 1.2rem;
-  color: #009688; 
+  color: #009688;
 }
 
-.contact-info .icon {
-  width: 24px;
-  height: 24px;
+.contact-info .icon,
+.icon {
+  width: 20px;
+  height: 20px;
 }
-  
+
 .contact-info a {
-  color: #009688; 
+  color: #009688;
   text-decoration: none;
 }
 
 .contact-info a:hover {
   text-decoration: underline;
-}
-.icon {
-  width: 20px;
-  height: 20px;
 }
 
 .form-row {
@@ -429,10 +404,10 @@ nav ul li a:hover {
 label {
   margin-bottom: 6px;
   font-weight: 600;
+  text-align: justify;
 }
 
-input[type="text"], input[type="email"],
-textarea {
+input[type="text"], input[type="email"], textarea {
   padding: 8px 12px;
   border: 2px solid #009688;
   border-radius: 6px;
@@ -449,28 +424,27 @@ textarea:focus {
   outline: none;
 }
 
+button,
 button.btn-persian {
-  width: 130px;
-  padding: 10px 0;
-  font-size: 1rem;
   background-color: #009688;
-  color: #fff;
+  color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 5px;
+  padding: 8px 16px;
   cursor: pointer;
-  align-self: center;
+  font-weight: bold;
   transition: background-color 0.3s ease;
+  text-align: center;
+  display: inline-block;
+  width: auto;
+  min-width: 80px;
 }
 
+button:hover,
 button.btn-persian:hover {
   background-color: #00796B;
 }
-hr {
-  border: none;
-  height: 2px;
-  background-color: #009688; 
-  margin: 20px 0;
-}
+
 footer {
   background-color: white;
   color: black;
@@ -479,57 +453,27 @@ footer {
   padding: 15px 40px;
   font-size: 14px;
   box-sizing: border-box;
-  border-top: 1px solid #ccc; 
+  border-top: 1px solid #ccc;
   font-family: Arial, sans-serif;
 }
 
 footer .persian {
-  color: #009688; 
+  color: #009688;
   font-weight: bold;
 }
 
-.footer-left, .footer-right {
+.footer-left,
+.footer-right {
   display: flex;
   align-items: center;
 }
-body, 
-p, 
-h1, h2, h3, h4, h5, h6, 
-section, 
-div, 
-li, 
-label {
-  text-align: justify;
-}
-button, 
-button.btn-persian {
-  background-color: #009688; 
-  color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 8px 16px; 
-  cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-  text-align: center;
-  display: inline-block;
-  width: auto; 
-  min-width: 80px; 
-}
-
-button:hover, 
-button.btn-persian:hover {
-  background-color: #00796B; 
-}
 
 .texte-cache {
-  display: none;  
+  display: none;
+  transition: max-height 0.4s ease;
+  overflow: hidden;
 }
 
 .texte-cache.active {
-  display: inline; 
-}
-.texte-cache {
-  transition: max-height 0.4s ease;
-  overflow: hidden;
+  display: inline;
 }
