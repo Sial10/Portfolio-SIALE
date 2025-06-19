@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // --- Slider images ---
   const images = [
-    "img/service.png",
+    "img/service.jpg",
     "img/codage.jpg",
     "img/info.avif"
   ];
