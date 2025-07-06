@@ -219,6 +219,7 @@ input, textarea {
   transition: background-color 0.3s ease;
 }
 
+
 .projet {
   display: flex;
   align-items: flex-start;
@@ -241,12 +242,7 @@ input, textarea {
   border-radius: 8px;
   flex-shrink: 0;
 }
-.projet-images {
-  width: 300px;
-  border-radius: 50%; 
-  flex-shrink: 0;
-  height: 300px; 
-}
+
 #competences {
   background-color: #f0f0f0;
   border: 1px solid #ccc;
