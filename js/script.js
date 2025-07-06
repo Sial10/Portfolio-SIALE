@@ -61,7 +61,17 @@ document.addEventListener("DOMContentLoaded", function () {
     "img/codage.jpg",
     "img/info.avif"
   ];
+ function redirigerContact(event) {
+    event.preventDefault(); // Empêche le lien de s'exécuter normalement
 
+    alert("Pour obtenir mon CV, merci de me contacter via le formulaire de contact.");
+
+    // Scroll vers la section Contact
+    const sectionContact = document.getElementById("contact");
+    if (sectionContact) {
+      sectionContact.scrollIntoView({ behavior: "smooth" });
+    }
+  }
   let currentIndex = 0;
   const banguiImg = document.getElementById("banguiImg");
   const intervalTime = 3000; // 3 secondes
