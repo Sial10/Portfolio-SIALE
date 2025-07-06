@@ -234,7 +234,6 @@ border-radius: 50%;
 border: 4px solid #009688; 
 display: block; 
 object-fit: cover;
-flex-shrink: 0;
 }
 .projet {
   display: flex;
