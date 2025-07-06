@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Afficher le popup
     popup.classList.add("show");
 
-    // Masquer après 10 secondes
+    // Masquer après 5 secondes
     setTimeout(() => {
       popup.classList.remove("show");
 
@@ -91,6 +91,6 @@ document.addEventListener("DOMContentLoaded", () => {
       if (contactSection) {
         contactSection.scrollIntoView({ behavior: "smooth" });
       }
-    }, 6000);
+    }, 5000);
   });
 });
