@@ -61,17 +61,6 @@ document.addEventListener("DOMContentLoaded", function () {
     "img/codage.jpg",
     "img/info.avif"
   ];
- function redirigerContact(event) {
-    event.preventDefault(); // Empêche le lien de s'exécuter normalement
-
-    alert("Pour obtenir mon CV, merci de me contacter via le formulaire de contact.");
-
-    // Scroll vers la section Contact
-    const sectionContact = document.getElementById("contact");
-    if (sectionContact) {
-      sectionContact.scrollIntoView({ behavior: "smooth" });
-    }
-  }
   let currentIndex = 0;
   const banguiImg = document.getElementById("banguiImg");
   const intervalTime = 3000; // 3 secondes
@@ -82,4 +71,26 @@ document.addEventListener("DOMContentLoaded", function () {
       banguiImg.src = images[currentIndex];
     }, intervalTime);
   }
+});
+document.addEventListener("DOMContentLoaded", () => {
+  const cvLink = document.getElementById("cv-link");
+  const popup = document.getElementById("popup-cv");
+
+  cvLink.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    // Afficher le popup
+    popup.classList.add("show");
+
+    // Masquer après 3 secondes
+    setTimeout(() => {
+      popup.classList.remove("show");
+
+      // Rediriger vers la section contact
+      const contactSection = document.getElementById("contact");
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 3000);
+  });
 });
