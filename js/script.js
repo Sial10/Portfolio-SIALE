@@ -91,6 +91,6 @@ document.addEventListener("DOMContentLoaded", () => {
       if (contactSection) {
         contactSection.scrollIntoView({ behavior: "smooth" });
       }
-    }, 10000);
+    }, 6000);
   });
 });
